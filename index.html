@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Daily Push Hub | 每日资讯与研报一键推送控制台</title>
+  <title>Daily Push Hub | 3大项目每日资讯与研报一键推送控制台</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0f172a">
@@ -20,6 +20,7 @@
       --accent-purple: #8b5cf6;
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
+      --accent-orange: #f97316;
       --danger: #ef4444;
     }
 
@@ -36,7 +37,7 @@
       background-image: 
         radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
+        radial-gradient(at 50% 50%, rgba(249, 115, 22, 0.08) 0px, transparent 50%);
       color: var(--text);
       min-height: 100vh;
       padding: 20px 16px 60px;
@@ -50,7 +51,7 @@
       max-width: 580px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
 
     /* 顶部导航与时钟 */
@@ -58,7 +59,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 4px;
+      padding: 6px 4px;
     }
 
     .logo-area {
@@ -71,16 +72,16 @@
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      background: linear-gradient(135deg, #f97316, #ec4899);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 22px;
-      box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 8px 16px -4px rgba(249, 115, 22, 0.4);
     }
 
     .logo-title h1 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.3px;
     }
@@ -114,14 +115,15 @@
     /* 全局通知 Banner */
     .banner {
       background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      border: 1px solid rgba(59, 130, 246, 0.25);
       border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 13px;
+      padding: 10px 14px;
+      font-size: 12px;
       color: #93c5fd;
       display: flex;
       align-items: center;
       gap: 10px;
+      line-height: 1.5;
     }
 
     /* 卡片通用样式 */
@@ -130,9 +132,9 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 22px 20px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      border-radius: 18px;
+      padding: 18px 18px;
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -151,43 +153,48 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .card-header-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .card-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 22px;
+    }
+
+    .avatar-cn {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.2));
+      border: 1px solid rgba(249, 115, 22, 0.35);
     }
 
     .avatar-finance {
       background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 63, 94, 0.2));
-      border: 1px solid rgba(244, 63, 94, 0.3);
+      border: 1px solid rgba(244, 63, 94, 0.35);
     }
 
     .avatar-trend {
       background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2));
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      border: 1px solid rgba(99, 102, 241, 0.35);
     }
 
     .card-title-text h2 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #fff;
     }
 
     .card-title-text p {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
       margin-top: 2px;
     }
@@ -195,8 +202,8 @@
     .target-tag {
       font-size: 11px;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 12px;
+      padding: 3px 8px;
+      border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(255, 255, 255, 0.05);
     }
@@ -204,20 +211,20 @@
     .target-tag.wechat {
       color: #4ade80;
       background: rgba(74, 222, 128, 0.1);
-      border-color: rgba(74, 222, 128, 0.2);
+      border-color: rgba(74, 222, 128, 0.25);
     }
 
     .target-tag.feishu {
       color: #60a5fa;
       background: rgba(96, 165, 250, 0.1);
-      border-color: rgba(96, 165, 250, 0.2);
+      border-color: rgba(96, 165, 250, 0.25);
     }
 
     .tags-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
+      gap: 5px;
+      margin-bottom: 14px;
     }
 
     .feature-tag {
@@ -225,7 +232,7 @@
       color: #cbd5e1;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 6px;
     }
 
@@ -235,15 +242,15 @@
       border: none;
       outline: none;
       cursor: pointer;
-      padding: 14px 20px;
-      border-radius: 14px;
-      font-size: 15px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-size: 14px;
       font-weight: 600;
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       transition: all 0.2s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
@@ -256,6 +263,14 @@
       opacity: 0.6;
       cursor: not-allowed;
       pointer-events: none;
+    }
+
+    .btn-cn {
+      background: linear-gradient(135deg, #ea580c, #f97316);
+    }
+    .btn-cn:hover {
+      background: linear-gradient(135deg, #c2410c, #ea580c);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
     }
 
     .btn-finance {
@@ -276,8 +291,8 @@
 
     .btn-all {
       background: linear-gradient(135deg, #10b981, #059669);
-      padding: 16px 20px;
-      font-size: 16px;
+      padding: 15px 18px;
+      font-size: 15px;
     }
     .btn-all:hover {
       background: linear-gradient(135deg, #059669, #047857);
@@ -286,11 +301,11 @@
 
     /* 状态指示框 */
     .status-box {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 12px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.5;
       background: rgba(15, 23, 42, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.05);
       display: none;
@@ -301,20 +316,12 @@
     }
 
     .status-step {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
       color: #cbd5e1;
-    }
-
-    .status-step:last-child {
-      margin-bottom: 0;
     }
 
     /* 历史记录模块 */
     .history-card {
-      margin-top: 10px;
+      margin-top: 4px;
     }
 
     .history-header {
@@ -325,7 +332,7 @@
     }
 
     .history-header h3 {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       font-weight: 600;
     }
@@ -341,22 +348,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 12px;
+      padding: 9px 12px;
       background: rgba(15, 23, 42, 0.4);
-      border-radius: 10px;
-      margin-bottom: 8px;
-      font-size: 13px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 12px;
     }
 
     .run-item-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .run-badge {
       font-size: 11px;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 6px;
       font-weight: 600;
     }
@@ -369,7 +376,7 @@
     /* 设置折叠面板 */
     .settings-toggle {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 4px;
     }
 
     .settings-toggle button {
@@ -386,8 +393,8 @@
       background: rgba(15, 23, 42, 0.8);
       border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 16px;
-      margin-top: 10px;
+      padding: 14px;
+      margin-top: 8px;
     }
 
     .settings-panel.open {
@@ -395,14 +402,14 @@
     }
 
     .form-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .form-group label {
       display: block;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .form-group input {
@@ -410,8 +417,8 @@
       background: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 13px;
+      padding: 8px 10px;
+      font-size: 12px;
       color: #fff;
       outline: none;
     }
@@ -442,7 +449,7 @@
     <!-- 顶部状态栏 -->
     <header>
       <div class="logo-area">
-        <div class="logo-icon">🚀</div>
+        <div class="logo-icon">🔥</div>
         <div class="logo-title">
           <h1>每日推送调度控制台</h1>
           <p id="beijingClock">北京时间 --:--:--</p>
@@ -457,10 +464,38 @@
     <!-- 顶部温馨提示 -->
     <div class="banner">
       <span>💡</span>
-      <span>点击下方按钮即可立即唤醒 GitHub Actions 云端服务器采集并完成微信/飞书推送，耗时约 1~2 分钟。</span>
+      <span>涵盖 3 大专属资讯通道。点击下方对应按钮即可唤醒 GitHub Actions 云端服务器执行采集与推送。</span>
     </div>
 
-    <!-- 卡片 1: 金融与AI晨报 (对象版) -->
+    <!-- 卡片 1: 国内热点挖掘与推送 (自己版) -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="card-avatar avatar-cn">🇨🇳</div>
+          <div class="card-title-text">
+            <h2>国内热点分析与深度洞察</h2>
+            <p>全网热度排行榜 · 智能去重归纳</p>
+          </div>
+        </div>
+        <span class="target-tag feishu">飞书机器人</span>
+      </div>
+
+      <div class="tags-container">
+        <span class="feature-tag">🔥 微博/知乎/头条/B站热点</span>
+        <span class="feature-tag">🧩 相似话题智能聚类归纳</span>
+        <span class="feature-tag">💬 舆情高赞风向与深层脉络</span>
+      </div>
+
+      <button class="push-btn btn-cn" id="btnCn" onclick="triggerWorkflow('cn')">
+        <span>🚀 立即推送国内热点 (给自己)</span>
+      </button>
+
+      <div class="status-box" id="statusCn">
+        <div class="status-step" id="stepCn">准备中...</div>
+      </div>
+    </div>
+
+    <!-- 卡片 2: 金融与AI晨报 (对象版) -->
     <div class="card">
       <div class="card-header">
         <div class="card-header-left">
@@ -474,11 +509,11 @@
       </div>
 
       <div class="tags-container">
-        <span class="feature-tag">🏛️ 中基协自律新规</span>
-        <span class="feature-tag">🌐 全球央行政策 (严格6条)</span>
-        <span class="feature-tag">📊 A股/黄金/原油/外汇行情 (严格10条)</span>
-        <span class="feature-tag">🤖 AI金融与科技前沿 (严格6条)</span>
-        <span class="feature-tag">💡 运营实务备忘 & 晨间寄语</span>
+        <span class="feature-tag">🏛️ 中基协自律监管新规</span>
+        <span class="feature-tag">🌐 央行与全球主管政策 (6条)</span>
+        <span class="feature-tag">📊 A股/黄金/原油/外汇 (10条)</span>
+        <span class="feature-tag">🤖 AI金融与科技前沿 (6条)</span>
+        <span class="feature-tag">💡 运营备忘 & 晨间长文寄语</span>
       </div>
 
       <button class="push-btn btn-finance" id="btnFinance" onclick="triggerWorkflow('finance')">
@@ -490,23 +525,23 @@
       </div>
     </div>
 
-    <!-- 卡片 2: 全网商机与国内热点 (自己版) -->
+    <!-- 卡片 3: 全网商机与痛点挖掘 (自己版) -->
     <div class="card">
       <div class="card-header">
         <div class="card-header-left">
           <div class="card-avatar avatar-trend">🎯</div>
           <div class="card-title-text">
-            <h2>全网商机与国内热点挖掘</h2>
-            <p>商业灵感雷达 · AI商机提炼</p>
+            <h2>全网商机与痛点挖掘雷达</h2>
+            <p>商业灵感雷达 · 独立开发商机</p>
           </div>
         </div>
         <span class="target-tag feishu">飞书机器人</span>
       </div>
 
       <div class="tags-container">
-        <span class="feature-tag">🔥 微博/知乎/国内热点合并去重</span>
         <span class="feature-tag">🌍 Reddit / HackerNews 痛点挖掘</span>
         <span class="feature-tag">💡 微型 SaaS / 独立开发商机 MVP 方案</span>
+        <span class="feature-tag">📊 ProductHunt / GitHub 趋势</span>
       </div>
 
       <button class="push-btn btn-trend" id="btnTrend" onclick="triggerWorkflow('trend')">
@@ -518,15 +553,15 @@
       </div>
     </div>
 
-    <!-- 卡片 3: 一键双推 -->
+    <!-- 卡片 4: 一键三推 -->
     <button class="push-btn btn-all" id="btnAll" onclick="triggerAll()">
-      <span>🔥 双通道一键全推 (金融 + 热点)</span>
+      <span>🔥 一键三推 (国内热点 + 金融研报 + 全网商机)</span>
     </button>
 
     <!-- 最近推送历史列表 -->
     <div class="card history-card">
       <div class="history-header">
-        <h3>📋 最近云端执行记录</h3>
+        <h3>📋 3大项目最近云端执行记录</h3>
         <span class="refresh-link" onclick="loadRecentRuns()">🔄 刷新状态</span>
       </div>
       <div id="runsList">
@@ -538,7 +573,7 @@
 
     <!-- 配置管理面板 (折叠) -->
     <div class="settings-toggle">
-      <button onclick="toggleSettings()">⚙️ 访问密钥与手机快捷链接配置</button>
+      <button onclick="toggleSettings()">⚙️ 访问密钥与手机快捷免密链接配置</button>
     </div>
 
     <div class="settings-panel" id="settingsPanel">
@@ -546,15 +581,15 @@
         <label>GitHub Personal Access Token (PAT)</label>
         <input type="password" id="patInput" placeholder="ghp_xxxxxxxxxxxx" onchange="saveToken()">
       </div>
-      <div style="display: flex; gap: 8px; margin-top: 10px;">
-        <button class="push-btn" style="background: rgba(255,255,255,0.1); font-size: 12px; padding: 8px 12px;" onclick="saveToken(true)">
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <button class="push-btn" style="background: rgba(255,255,255,0.1); font-size: 11px; padding: 7px 10px;" onclick="saveToken(true)">
           💾 保存 Token
         </button>
-        <button class="push-btn" style="background: rgba(59,130,246,0.2); font-size: 12px; padding: 8px 12px; color: #93c5fd;" onclick="copyMobileUrl()">
+        <button class="push-btn" style="background: rgba(59,130,246,0.2); font-size: 11px; padding: 7px 10px; color: #93c5fd;" onclick="copyMobileUrl()">
           📲 复制手机一键免登网址
         </button>
       </div>
-      <p style="font-size: 11px; color: var(--text-muted); margin-top: 10px; line-height: 1.5;">
+      <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">
         提示：Token 仅安全保存在当前手机/电脑浏览器的 localStorage 本地缓存中，绝不上报任何第三方服务器。
       </p>
     </div>
@@ -564,31 +599,56 @@
   <script>
     // 默认内置 Token（用于本地或通过特定哈希免密访问）
     const DEFAULT_TOKEN = '';
-    const REPO_FINANCE = 'kailion/finance-miner';
-    const WORKFLOW_FINANCE = 'daily_finance_push.yml';
 
-    const REPO_TREND = 'kailion/trend-miner';
-    const WORKFLOW_TREND = 'daily_mining.yml';
+    // 3 大项目配置
+    const PROJECTS = {
+      cn: {
+        repo: 'kailion/trend-miner-cn',
+        workflow: 'daily_push.yml',
+        name: '🇨🇳 国内热点',
+        target: '飞书机器人',
+        btnId: 'btnCn',
+        statusBoxId: 'statusCn',
+        stepId: 'stepCn'
+      },
+      finance: {
+        repo: 'kailion/finance-miner',
+        workflow: 'daily_finance_push.yml',
+        name: '📈 金融晨报',
+        target: '微信（Server酱）',
+        btnId: 'btnFinance',
+        statusBoxId: 'statusFinance',
+        stepId: 'stepFinance'
+      },
+      trend: {
+        repo: 'kailion/trend-miner',
+        workflow: 'daily_mining.yml',
+        name: '🎯 全网商机',
+        target: '飞书机器人',
+        btnId: 'btnTrend',
+        statusBoxId: 'statusTrend',
+        stepId: 'stepTrend'
+      }
+    };
 
     // 获取当前 Token
     function getToken() {
-      // 1. 优先从 URL hash 获取 (#token=...)
       if (window.location.hash.includes('token=')) {
         const hashMatch = window.location.hash.match(/token=([a-zA-Z0-9_]+)/);
         if (hashMatch && hashMatch[1]) {
           const t = hashMatch[1];
           localStorage.setItem('push_gh_token', t);
-          // 清空 URL hash 保证美观
           history.replaceState(null, '', window.location.pathname);
           return t;
         }
       }
-      // 2. 从本地缓存获取
       const saved = localStorage.getItem('push_gh_token');
       if (saved) return saved;
-      // 3. 默认兜底
-      localStorage.setItem('push_gh_token', DEFAULT_TOKEN);
-      return DEFAULT_TOKEN;
+      if (DEFAULT_TOKEN) {
+        localStorage.setItem('push_gh_token', DEFAULT_TOKEN);
+        return DEFAULT_TOKEN;
+      }
+      return '';
     }
 
     function saveToken(showNotice = false) {
@@ -631,22 +691,20 @@
     updateClock();
 
     // 触发单个工作流
-    async function triggerWorkflow(type) {
+    async function triggerWorkflow(key) {
       const token = getToken();
-      const isFinance = (type === 'finance');
-      const repo = isFinance ? REPO_FINANCE : REPO_TREND;
-      const workflow = isFinance ? WORKFLOW_FINANCE : WORKFLOW_TREND;
-      const btn = document.getElementById(isFinance ? 'btnFinance' : 'btnTrend');
-      const statusBox = document.getElementById(isFinance ? 'statusFinance' : 'statusTrend');
-      const stepEl = document.getElementById(isFinance ? 'stepFinance' : 'stepTrend');
+      const conf = PROJECTS[key];
+      const btn = document.getElementById(conf.btnId);
+      const statusBox = document.getElementById(conf.statusBoxId);
+      const stepEl = document.getElementById(conf.stepId);
 
       btn.classList.add('disabled');
       btn.innerHTML = `<span class="spin">⏳</span> <span>正在调度云端...</span>`;
       statusBox.classList.add('active');
-      stepEl.innerHTML = `📡 正在向 GitHub Actions 云端发送调度请求...`;
+      stepEl.innerHTML = `📡 正在向 GitHub 云端发送调度请求 (${conf.name})...`;
 
       try {
-        const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/${workflow}/dispatches`, {
+        const res = await fetch(`https://api.github.com/repos/${conf.repo}/actions/workflows/${conf.workflow}/dispatches`, {
           method: 'POST',
           headers: {
             'Authorization': `token ${token}`,
@@ -657,32 +715,33 @@
         });
 
         if (res.status === 204 || res.status === 200) {
-          stepEl.innerHTML = `🚀 云端 Runner 已就绪并启动！正在全网抓取并调用 AI 生成研报...`;
-          pollWorkflowStatus(repo, isFinance);
+          stepEl.innerHTML = `🚀 云端已启动！正在抓取数据并调用 AI 生成分析报告...`;
+          pollWorkflowStatus(key);
         } else {
           const errData = await res.json();
           stepEl.innerHTML = `❌ 触发失败: ${errData.message || res.statusText}`;
           btn.classList.remove('disabled');
-          btn.innerHTML = isFinance ? `🚀 重新推送金融晨报` : `🚀 重新推送全网商机`;
+          btn.innerHTML = `🚀 重新推送 ${conf.name}`;
         }
       } catch (e) {
         stepEl.innerHTML = `❌ 网络异常: ${e.message}`;
         btn.classList.remove('disabled');
-        btn.innerHTML = isFinance ? `🚀 重新推送金融晨报` : `🚀 重新推送全网商机`;
+        btn.innerHTML = `🚀 重新推送 ${conf.name}`;
       }
     }
 
-    // 轮询运行状态
-    async function pollWorkflowStatus(repo, isFinance) {
+    // 轮询单个工作流状态
+    async function pollWorkflowStatus(key) {
       const token = getToken();
-      const btn = document.getElementById(isFinance ? 'btnFinance' : 'btnTrend');
-      const stepEl = document.getElementById(isFinance ? 'stepFinance' : 'stepTrend');
+      const conf = PROJECTS[key];
+      const btn = document.getElementById(conf.btnId);
+      const stepEl = document.getElementById(conf.stepId);
       let attempts = 0;
 
       const timer = setInterval(async () => {
         attempts++;
         try {
-          const res = await fetch(`https://api.github.com/repos/${repo}/actions/runs?per_page=1`, {
+          const res = await fetch(`https://api.github.com/repos/${conf.repo}/actions/runs?per_page=1`, {
             headers: {
               'Authorization': `token ${token}`,
               'Accept': 'application/vnd.github.v3+json'
@@ -698,22 +757,22 @@
             if (status === 'queued') {
               stepEl.innerHTML = `⏳ 云端任务排队中 (Run ID: ${latestRun.id})...`;
             } else if (status === 'in_progress') {
-              stepEl.innerHTML = `⚡ 正在执行：全网行情/资讯抓取 ➔ Gemini/DeepSeek 提炼 ➔ 准备推送...`;
+              stepEl.innerHTML = `⚡ 正在执行：全网抓取 ➔ AI提炼总结 ➔ 准备发送...`;
             } else if (status === 'completed') {
               clearInterval(timer);
               btn.classList.remove('disabled');
               if (conclusion === 'success') {
-                stepEl.innerHTML = `🎉 推送成功！已于刚刚顺利送达${isFinance ? '微信（方糖服务号）' : '飞书机器人'}！`;
-                btn.innerHTML = isFinance ? `✅ 已成功推送金融晨报` : `✅ 已成功推送全网商机`;
+                stepEl.innerHTML = `🎉 推送成功！已于刚刚顺利送达【${conf.target}】！`;
+                btn.innerHTML = `✅ 已成功推送 ${conf.name}`;
               } else {
-                stepEl.innerHTML = `⚠️ 云端执行结束，状态: ${conclusion}。请查看历史日志。`;
-                btn.innerHTML = isFinance ? `🚀 再次推送金融晨报` : `🚀 再次推送全网商机`;
+                stepEl.innerHTML = `⚠️ 云端执行结束，状态: ${conclusion}。`;
+                btn.innerHTML = `🚀 再次推送 ${conf.name}`;
               }
               loadRecentRuns();
             }
           }
 
-          if (attempts > 60) { // 超过4分钟
+          if (attempts > 75) { // 5分钟
             clearInterval(timer);
             btn.classList.remove('disabled');
             stepEl.innerHTML = `⏱️ 已在云端后台持续执行，可点击下方【刷新状态】查看最新进度。`;
@@ -724,37 +783,48 @@
       }, 4000);
     }
 
-    // 双通道一键全推
+    // 一键三推
     async function triggerAll() {
       const btnAll = document.getElementById('btnAll');
       btnAll.classList.add('disabled');
-      btnAll.innerHTML = `<span class="spin">⏳</span> 正在同时启动双通道推送...`;
+      btnAll.innerHTML = `<span class="spin">⏳</span> 正在同时启动 3 大项目推送...`;
+      triggerWorkflow('cn');
       triggerWorkflow('finance');
       triggerWorkflow('trend');
       setTimeout(() => {
         btnAll.classList.remove('disabled');
-        btnAll.innerHTML = `🔥 双通道一键全推 (金融 + 热点)`;
+        btnAll.innerHTML = `🔥 一键三推 (国内热点 + 金融研报 + 全网商机)`;
       }, 3000);
     }
 
-    // 加载最近历史记录
+    // 加载 3 大项目最近历史记录
     async function loadRecentRuns() {
       const token = getToken();
       const listEl = document.getElementById('runsList');
       const connDot = document.getElementById('connDot');
       const connText = document.getElementById('connText');
 
+      if (!token) {
+        connDot.className = 'status-dot offline';
+        connText.innerText = '未配置 Token';
+        listEl.innerHTML = `<div style="font-size: 12px; color: var(--text-muted); text-align: center; padding: 10px;">请展开下方设置保存 GitHub Token 后查看状态</div>`;
+        return;
+      }
+
       try {
-        const [resFin, resTrend] = await Promise.all([
-          fetch(`https://api.github.com/repos/${REPO_FINANCE}/actions/runs?per_page=3`, {
+        const [resCn, resFin, resTrend] = await Promise.all([
+          fetch(`https://api.github.com/repos/${PROJECTS.cn.repo}/actions/runs?per_page=2`, {
             headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
           }),
-          fetch(`https://api.github.com/repos/${REPO_TREND}/actions/runs?per_page=3`, {
+          fetch(`https://api.github.com/repos/${PROJECTS.finance.repo}/actions/runs?per_page=2`, {
+            headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+          }),
+          fetch(`https://api.github.com/repos/${PROJECTS.trend.repo}/actions/runs?per_page=2`, {
             headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
           })
         ]);
 
-        if (!resFin.ok || !resTrend.ok) {
+        if (!resCn.ok && !resFin.ok && !resTrend.ok) {
           connDot.className = 'status-dot offline';
           connText.innerText = 'Token 异常';
           listEl.innerHTML = `<div style="font-size: 12px; color: var(--danger); text-align: center; padding: 10px;">Token 认证失败，请在下方设置中重新保存有效 Token</div>`;
@@ -764,12 +834,14 @@
         connDot.className = 'status-dot';
         connText.innerText = '云端就绪';
 
-        const dataFin = await resFin.json();
-        const dataTrend = await resTrend.json();
+        const dataCn = resCn.ok ? await resCn.json() : {};
+        const dataFin = resFin.ok ? await resFin.json() : {};
+        const dataTrend = resTrend.ok ? await resTrend.json() : {};
 
         let allRuns = [];
+        (dataCn.workflow_runs || []).forEach(r => allRuns.push({ ...r, appName: '🇨🇳 国内热点', channel: '飞书' }));
         (dataFin.workflow_runs || []).forEach(r => allRuns.push({ ...r, appName: '📈 金融晨报', channel: '微信' }));
-        (dataTrend.workflow_runs || []).forEach(r => allRuns.push({ ...r, appName: '🎯 热点商机', channel: '飞书' }));
+        (dataTrend.workflow_runs || []).forEach(r => allRuns.push({ ...r, appName: '🎯 全网商机', channel: '飞书' }));
 
         allRuns.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
@@ -779,7 +851,7 @@
         }
 
         let html = '';
-        allRuns.slice(0, 5).forEach(run => {
+        allRuns.slice(0, 6).forEach(run => {
           let badgeClass = 'badge-queued';
           let statusText = '排队中';
 
@@ -796,7 +868,6 @@
             }
           }
 
-          // 时间转换为北京时间
           const d = new Date(run.created_at);
           const timeStr = `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 
@@ -823,7 +894,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       getToken();
       loadRecentRuns();
-      setInterval(loadRecentRuns, 30000); // 30秒自动刷新一次历史状态
+      setInterval(loadRecentRuns, 30000);
     });
   </script>
 </body>
